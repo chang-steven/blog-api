@@ -25,6 +25,7 @@ const BlogPosts = {
       publishDate: publishDate || Date.now()
     };
     this.posts.push(post);
+    console.log('Created new post');
     return post;
   },
   get: function(id=null) {
@@ -51,6 +52,7 @@ const BlogPosts = {
     const postIndex = this.posts.findIndex(
       post => post.id === updatedPost.id);
     if (postIndex === -1) {
+      console.error(`Can't update item \`${id}\` because doesn't exist.`)
       throw new StorageException(
         `Can't update item \`${id}\` because doesn't exist.`)
     }
