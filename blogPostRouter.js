@@ -1,13 +1,9 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-// const uuid = require('uuid');
 
 const {BlogPosts} = require('./models');
-
-// BlogPosts.create()
 
 BlogPosts.create('My Blog', 'Today, I had a good day.', 'Steven');
 BlogPosts.create('DT', "God is good", 'John');
